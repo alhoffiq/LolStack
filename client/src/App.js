@@ -45,7 +45,7 @@ function App() {
                 <Route path='/login'>
                     <Login />
                 </Route>
-                <PrivateRoute exact path='/notes'>
+                <PrivateRoute exact path='/summoner'>
                     <Notes />
                 </PrivateRoute>
             </Switch>
