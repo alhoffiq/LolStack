@@ -6,7 +6,7 @@ import useAuth from './hooks/auth';
 import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
-import Notes from './pages/Notes';
+import Summoner from './pages/Summoner';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -45,8 +45,8 @@ function App() {
                 <Route path='/login'>
                     <Login />
                 </Route>
-                <PrivateRoute exact path='/summoner'>
-                    <Notes />
+                <PrivateRoute exact path='/summoners'>
+                    <Summoner />
                 </PrivateRoute>
             </Switch>
         </Router>

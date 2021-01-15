@@ -4,6 +4,11 @@ const Schema = mongoose.Schema;
 
 const summonerSchema = new Schema(
     {
+        name: {
+            type: String,
+            trim: true,
+            required: 'Enter a name'
+        },
         puuid: {
             type: String,
             trim: true,
@@ -14,7 +19,7 @@ const summonerSchema = new Schema(
             trim: true,
             required: 'Enter an accountId'
         },
-        summonerId: {
+        id: {
             type: String,
             trim: true,
             required: 'Enter a summonerId'
