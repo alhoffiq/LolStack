@@ -7,6 +7,7 @@ const axios = require('axios');
  */
 router.get('/', isAuthenticated, function (req, res) {
     // we can pass in things in the query of a REST call!
+    console.log(req.user)
     db.Summoner.find(req.query)
         .populate('user')
         .then(dbModel => res.json(dbModel))
@@ -70,5 +71,4 @@ router.delete('/:id', isAuthenticated, function (req, res) {
         .catch(err => res.status(422).json(err));
 });
 
-// Defining methods for the booksController
 module.exports = router;

@@ -22,7 +22,12 @@ const userSchema = new Schema(
         },
         summoner: [
             { type: Schema.Types.ObjectId, ref: 'Summoner' }
-        ]
+        ],
+        name: {
+            type: String,
+            trim: true,
+            required: 'Enter a name'
+        },
     }
 );
 

@@ -21,9 +21,9 @@ const useAuth = () => {
             });
     };
 
-    const signup = async (email, password) => {
+    const signup = async (email, password, name) => {
         return axios.post('api/auth/signup',
-            { email: email, password: password })
+            { email: email, password: password, name: name })
             .then(res => {
                 setToken(res.data.token);
                 setUser(res.data.user);
@@ -57,7 +57,7 @@ const useAuth = () => {
 
     // grab the encoded user data here
     const getProfile = () => {
-        return jwtDecode(token);
+        return token?jwtDecode(token):{};
     };
 
     // call to get the token
