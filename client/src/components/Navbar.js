@@ -3,6 +3,7 @@ import useAuth from '../hooks/auth';
 
 const Navbar = () => {
     const { isLoggedIn, logout, getProfile } = useAuth();
+    console.log(getProfile());
     return (
         <div>
             <h3>Navbar</h3>
@@ -11,7 +12,7 @@ const Navbar = () => {
                 <li><Link to='/summoners'>Summoner</Link></li>
                 {isLoggedIn() ?
                     <>
-                        <li>Hello, {getProfile().email}</li>
+                        <li>Hello, {getProfile().name}</li>
                         <li><Link onClick={() => logout()} to='/'>Logout</Link></li>
                     </>
                     :
@@ -20,7 +21,7 @@ const Navbar = () => {
                         <li><Link to="/login">Login</Link></li>
                     </>
                 }
-                
+
             </ul>
         </div>
     );

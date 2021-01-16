@@ -1,4 +1,4 @@
 module.exports = {
     Summoner: require('./summoner'),
-    User: require('./user')
+    User: require('./user'),
 };

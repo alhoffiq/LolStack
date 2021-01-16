@@ -9,6 +9,7 @@ const Signup = () => {
     const location = useLocation();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [name, setName] = useState('');
     // For our redirector
     const [redirectToLogin, toggleRedirect] = useState(false);
     // This is the key part to our redirector. We can pull the prior location out here, if it exists
@@ -16,7 +17,7 @@ const Signup = () => {
 
     const handleSubmit = event => {
         event.preventDefault();
-        signup(email, password).then(res => {
+        signup(email, password, name).then(res => {
             // Go back to whence you came!
             history.replace(from);
         });
@@ -61,6 +62,14 @@ const Signup = () => {
                     onChange={event => setPassword(event.target.value)}
                 />
                 <br />
+                <label htmlFor='name'>Summoner Name:</label>
+                <input
+                    name='name'
+                    placeholder='Summoner'
+                    type='text'
+                    value={name}
+                    onChange={event => setName(event.target.value)}
+                />
                 <button type='submit'>Signup</button>
             </form>
             <p>

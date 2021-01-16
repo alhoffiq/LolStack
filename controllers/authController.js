@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken');
 const util = require('util');
 const router = require('express').Router();
 const db = require('../models');
-
+const axios = require('axios');
 const signAsync = util.promisify(jwt.sign);
 
 //
@@ -10,17 +10,18 @@ router.post('/login', async (req, res) => {
     try {
         const { email, password } = req.body;
         // Find user
-        const user = await db.User.findOne({ email:email });
+        const user = await db.User.findOne({ email: email });
         if (!user) {
             res.status(400).send('User not found.');
         }
+        const summoner = await db.Summoner.findOne({ name: user.name });
         const isGoodPassword = await user.validPassword(password);
         if (!isGoodPassword) {
             res.status(400).send('Invalid Password.');
         }
         // Create JWT token
         const token = await signAsync(
-            { _id: user._id, email: user.email },
+            { _id: user._id, email: user.email, name: user.name, summoner: summoner },
             process.env.SECRET,
             {
                 expiresIn: '24h',
@@ -44,18 +45,38 @@ router.post('/login', async (req, res) => {
 // We create a user, tossing back an error fi it fails
 router.post('/signup', async (req, res) => {
     try {
-        const { email, password } = req.body;
+        const { email, password, name } = req.body;
         // Try to create a user
         const user = await db.User.create({
             email,
-            password
+            password,
+            name
         });
         if (!user) {
             res.status(400).send('Cannot create user.');
         }
+
+        const query = (req.body.name.replace(/ /g, '%20'));
+        const riotResponse = await axios({
+            method: 'get',
+            url: `https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${query}?api_key=${process.env.RIOTKEY}`
+        })
+        const { puuid, accountId, id } = riotResponse.data;
+        console.log('Name: ' + name);
+        console.log('puuid: ' + puuid);
+        console.log('accountId: ' + accountId);
+        console.log('id: ' + id);
+        const summoner = await db.Summoner.create({
+            name: name,
+            puuid: puuid,
+            accountId: accountId,
+            id, id,
+            user: user._id,
+        });
+
         // Create JWT token
         const token = await signAsync(
-            { _id: user._id, email: user.email },
+            { _id: user._id, email: user.email, name: user.name, summoner: summoner },
             process.env.SECRET,
             {
                 expiresIn: '24h',
