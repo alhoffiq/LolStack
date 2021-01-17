@@ -1,43 +1,38 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import useAuth from '../hooks/auth';
 
 const Summoner = function () {
-    const [summoner, setSummoner] = useState([]);
-    const [name, setName] = useState('');
+    const { getProfile } = useAuth();
+    const [masteries, setMasteries] = useState([]);
     useEffect(() => {
-        fetchSummoner();
+        fetchMasteries();
     }, []);
 
-    async function fetchSummoner() {
-        const { data } = await axios.get('/api/summoners');
-        setSummoner(data);
+    async function fetchMasteries() {
+        const { data } = await axios.get('/api/riot/masteries');
+        setMasteries(data);
+        console.log(data);
     }
 
-    const handleSubmit = event => {
-        event.preventDefault();
-        submitSummoner();
-    };
-    const submitSummoner = async () => {
-        await axios.post('/api/summoners', { name: name });
-        setName('');
-    };
+    // const handleSubmit = event => {
+    //     event.preventDefault();
+    //     submitSummoner();
+    // };
 
     return (
         <div>
             <h2>Summoner</h2>
-            <h2>Summoner Name: {summoner.name}</h2>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="name">Summoner Name:</label>
-                <input
-                    name='name'
-                    placeholder='Summoner'
-                    type='text'
-                    value={name}
-                    onChange={event => setName(event.target.value)}
-                />
-                <br />
-                <button type="submit" className="btn btn-primary">Post</button>
-            </form>
+            <h2>Summoner Name: {getProfile().name}</h2>
+            <ol>
+                {masteries.map(mastery => {
+                    return (
+                        <li key={mastery.championId}>
+                            {JSON.stringify(mastery)}
+                        </li>
+                    );
+                })}
+            </ol>
         </div>
     );
 };
