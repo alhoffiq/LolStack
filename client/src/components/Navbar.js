@@ -3,7 +3,6 @@ import useAuth from '../hooks/auth';
 
 const Navbar = () => {
     const { isLoggedIn, logout, getProfile } = useAuth();
-    console.log(getProfile());
     return (
         <div>
             <nav className="bg-indigo-700 shadow-lg">

@@ -1,7 +1,16 @@
 .card {
-    width: 20rem;
+    width: 95%;
+    margin-bottom: 10px;
 }
 
 .App {
     text-align: center;
+}
+
+.sum-name {
+    text-align: center;
+}
+
+.champ-img {
+    width: 25%;
 }
