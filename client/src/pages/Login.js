@@ -35,39 +35,49 @@ const Login = () => {
     }
 
     return (
-        <div>
-            <h2>
-                Login Page
-            </h2>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor='email'>Email:</label>
-                <input
-                    name='email'
-                    placeholder='Email'
-                    type='email'
-                    autoComplete='username'
-                    value={email}
-                    onChange={event => setEmail(event.target.value)}
-                />
-                <br />
-                <label htmlFor='password'>Password:</label>
-                <input
-                    name='password'
-                    placeholder='Password'
-                    type='password'
-                    autoComplete='password'
-                    value={password}
-                    onChange={event => setPassword(event.target.value)}
-                />
-                <br />
-                <button type='submit'>Login</button>
-            </form>
-            <p>
-                Need an account? <button onClick={() => toggleRedirect(true)}>Signup Here</button>
-            </p>
-
+        <div className='container'>
+            <div className='row justify-content-center'>
+                <div className='col-4'>
+                    <h2>
+                        Welcome to LoLstack
+                    </h2>
+                </div>
+            </div>
+            <div className='row'>
+                <form onSubmit={handleSubmit}>
+                    <div className='col'>
+                        <label htmlFor='email'>Email:</label>
+                        <input
+                            name='email'
+                            placeholder='Email'
+                            type='email'
+                            autoComplete='username'
+                            value={email}
+                            onChange={event => setEmail(event.target.value)}
+                        />
+                    </div>
+                    <div className='col'>
+                        <label htmlFor='password'>Password:</label>
+                        <input
+                            name='password'
+                            placeholder='Password'
+                            type='password'
+                            autoComplete='password'
+                            value={password}
+                            onChange={event => setPassword(event.target.value)}
+                        />
+                    </div>
+                    <button type='button' className='btn btn-dark'>Login</button>
+                </form>
+            </div>
+            <div classname='row'>
+                <div className='col'>
+                    <p>
+                        Need an account? <button type='button' className='btn btn-dark' onClick={() => toggleRedirect(true)}>Signup Here</button>
+                    </p>
+                </div>
+            </div>
         </div >
     );
 };
-
 export default Login;
