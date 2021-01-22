@@ -35,13 +35,17 @@ const Summoner = function () {
                             <div className="card mx-auto">
                                 <div className="row">
                                     <div className="col-3"><img src={`http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${mastery.champion.id}_0.jpg`} alt="champion"></img></div>
-                                    <div className="col-4">
+                                    <div className="col-6">
                                         <div className="card-body">
-                                            <h2 className="card-title">{mastery.champion.name}</h2>
+                                            <h2 className="card-title">{mastery.champion.name} -- {mastery.champion.title}</h2>
+                                            <h3 className="card-text">{mastery.champion.title}</h3>
                                             <h3 className="card-text">Mastery level: {mastery.championLevel}</h3>
                                             <h4 className="card-text">Mastery points: {mastery.championPoints}</h4>
                                             <p className="card-text">{`Earned chest: ${mastery.chestGranted}`}</p>
                                         </div>
+                                    </div>
+                                    <div className="col-3">
+                                        
                                     </div>
                                 </div>
                             </div>
