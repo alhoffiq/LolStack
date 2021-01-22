@@ -34,12 +34,12 @@ router.get('/masteries', isAuthenticated, async function (req, res) {
 
 });
 
-router.get('/champions', isAuthenticated, async function (req, res) {
+router.get('/score', isAuthenticated, async function (req, res) {
     // we can pass in things in the query of a REST call!
     // console.log(req.user)
     const data = await axios({
         method: 'get',
-        url: 'http://ddragon.leagueoflegends.com/cdn/11.1.1/data/en_US/champion.json'
+        url: `https://na1.api.riotgames.com/lol/champion-mastery/v4/scores/by-summoner/${req.user.summoner.id}?api_key=${riotApi}`
     });
 
     res.json(data.data);

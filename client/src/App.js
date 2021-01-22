@@ -8,6 +8,7 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Summoner from './pages/Summoner';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
                     <Summoner />
                 </PrivateRoute>
             </Switch>
+            <Footer />
         </Router>
     );
 }
