@@ -67,7 +67,7 @@ const Login = () => {
                             onChange={event => setPassword(event.target.value)}
                         />
                     </div>
-                    <button type='button' className='btn btn-dark'>Login</button>
+                    <button type='submit' className='btn btn-dark'>Login</button>
                 </form>
             </div>
             <div className='row'>
