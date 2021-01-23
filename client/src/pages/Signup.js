@@ -38,44 +38,55 @@ const Signup = () => {
 
     return (
         <div>
-            <h2>
-                Signup Page
-            </h2>
+            <div className='row justify-content-center'>
+                <div className='col-4'>
+                    <h2>
+                        Sign-Up
+                    </h2>
+                </div>
+            </div>
             <form onSubmit={handleSubmit}>
-                <label htmlFor='email'>Email:</label>
-                <input
-                    name='email'
-                    placeholder='Email'
-                    type='email'
-                    autoComplete='username'
-                    value={email}
-                    onChange={event => setEmail(event.target.value)}
-                />
+                <div className='col'>
+                    <label htmlFor='email'>Email:</label>
+                    <input
+                        name='email'
+                        type='email'
+                        autoComplete='username'
+                        value={email}
+                        onChange={event => setEmail(event.target.value)}
+                    />
+                </div>
                 <br />
-                <label htmlFor='password'>Password:</label>
-                <input
-                    name='password'
-                    placeholder='Password'
-                    type='password'
-                    autoComplete='password'
-                    value={password}
-                    onChange={event => setPassword(event.target.value)}
-                />
+                <div className='col'>
+                    <label htmlFor='password'>Password:</label>
+                    <input
+                        name='password'
+                        type='password'
+                        autoComplete='password'
+                        value={password}
+                        onChange={event => setPassword(event.target.value)}
+                    />
+                </div>
                 <br />
-                <label htmlFor='name'>Summoner Name:</label>
-                <input
-                    name='name'
-                    placeholder='Summoner'
-                    type='text'
-                    value={name}
-                    onChange={event => setName(event.target.value)}
-                />
-                <button type='submit'>Signup</button>
+                <div className='col'>
+                    <label htmlFor='name'>Summoner Name:</label>
+                    <input
+                        name='name'
+                        type='text'
+                        value={name}
+                        onChange={event => setName(event.target.value)}
+                    />
+                    <button type='submit' className='btn btn-dark'>Signup</button>
+                </div>
             </form>
-            <p>
-                Already have an account? <button onClick={() => toggleRedirect(true)}>Login Here</button>
-            </p>
-
+            <br />
+            <div classname='row'>
+                <div className='col'>
+                    <p>
+                        Already have an account? <button type='submit' className='btn btn-dark' onClick={() => toggleRedirect(true)}>Login</button>
+                    </p>
+                </div>
+            </div>
         </div>
     );
 };
