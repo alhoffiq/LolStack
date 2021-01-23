@@ -17,7 +17,7 @@ const Summoner = function () {
     async function fetchMasteries() {
         const { data } = await axios.get('/api/riot/masteries');
         setMasteries(data);
-        console.log(data[0]);
+        console.log(data[8]);
     }
 
     async function fetchScore() {
@@ -27,8 +27,21 @@ const Summoner = function () {
 
     return (
         <div>
-            <h2 className="sum-name">Hello, {getProfile().name}</h2>
-            <h3 className="sum-name">Mastery Level: {score}</h3>
+            <div>
+                {masteries.slice(0, 1).map(mastery => {
+                    return (
+                        <div className="col-lg" key="0">
+                            <div className="img-container">
+                                <div className="positioning">
+                                    <h1 className="sum-name">{getProfile().name}</h1>
+                                    <h3 className="sum-name">Mastery Level: {score}</h3>
+                                </div>
+                                <img src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${mastery.champion.id}_0.jpg`} alt="champ splash"></img>
+                            </div>
+                        </div>
+                    );
+                })}
+            </div>
             <ol>
                 {masteries.slice(0, show).map(mastery => {
                     return (
@@ -38,7 +51,7 @@ const Summoner = function () {
                                     <div className="col-3"><img src={`http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${mastery.champion.id}_0.jpg`} alt="champion"></img></div>
                                     <div className="col-6">
                                         <div className="card-body">
-                                            <h2 className="card-title">{mastery.champion.name} -- {mastery.champion.title}</h2>
+                                            <a href={`https://leagueoflegends.fandom.com/wiki/${mastery.champion.name}`} target="_blank" rel="noreferrer"><h2 className="card-title">{mastery.champion.name} -- {mastery.champion.title}</h2></a>
                                             <h3 className="card-text">Mastery level: {mastery.championLevel}</h3>
                                             <h4 className="card-text">Mastery points: {mastery.championPoints}</h4>
                                             <br></br>
@@ -46,7 +59,7 @@ const Summoner = function () {
                                         </div>
                                     </div>
                                     <div className="col-3">
-                                        
+
                                     </div>
                                 </div>
                             </div>
@@ -54,7 +67,8 @@ const Summoner = function () {
                     );
                 })}
             </ol>
-            <button className="btn btn-primary" onClick={() => setShow(show + 10)}>Show more!</button>
+            <button className="btn btn-primary" onClick={() => setShow(show + 10)}>Show more</button>
+            <button className="btn btn-primary" onClick={() => setShow(show + 999)}>Show all!</button>
         </div>
     );
 };
