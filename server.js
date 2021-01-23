@@ -41,7 +41,7 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, './client/build/index.html'));
 });
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/project3', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/lolstack', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
