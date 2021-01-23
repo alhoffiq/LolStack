@@ -43,31 +43,34 @@ const Login = () => {
                     </h2>
                 </div>
             </div>
-            <form onSubmit={handleSubmit}>
-                <div className='col'>
-                    <label htmlFor='email'>Email:</label>
-                    <input
-                        name='email'
-                        type='email'
-                        autoComplete='username'
-                        value={email}
-                        onChange={event => setEmail(event.target.value)}
-                    />
-                </div>
-                <br />
-                <div className='col'>
-                    <label htmlFor='password'>Password:</label>
-                    <input
-                        name='password'
-                        type='password'
-                        autoComplete='password'
-                        value={password}
-                        onChange={event => setPassword(event.target.value)}
-                    />
-                </div>
-            </form>
-            <br />
-            <div classname='row'>
+            <div className='row'>
+                <form onSubmit={handleSubmit}>
+                    <div className='col'>
+                        <label htmlFor='email'>Email:</label>
+                        <input
+                            name='email'
+                            placeholder='Email'
+                            type='email'
+                            autoComplete='username'
+                            value={email}
+                            onChange={event => setEmail(event.target.value)}
+                        />
+                    </div>
+                    <div className='col'>
+                        <label htmlFor='password'>Password:</label>
+                        <input
+                            name='password'
+                            placeholder='Password'
+                            type='password'
+                            autoComplete='password'
+                            value={password}
+                            onChange={event => setPassword(event.target.value)}
+                        />
+                    </div>
+                    <button type='button' className='btn btn-dark'>Login</button>
+                </form>
+            </div>
+            <div className='row'>
                 <div className='col'>
                     <p>
                         Need an account? <button type='submit' className='btn btn-dark' onClick={() => toggleRedirect(true)}>Sign-Up</button>

@@ -1,6 +1,10 @@
 .card {
     width: 95%;
     margin-bottom: 10px;
+    color: #4c51bf;
+    border: 5px solid!important;
+    border-color: #4c51bf!important;
+    background-color: #1B1A29!important;
 }
 
 .App {
@@ -9,4 +13,13 @@
 
 .sum-name {
     text-align: center;
+}
+
+.chest-img {
+    width: 40%;
+    height: auto;
+}
+
+.grey {
+    filter: grayscale(100%);
 }

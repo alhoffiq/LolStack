@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import useAuth from '../hooks/auth';
+import lolchest from '../assets/lolchest.png';
 
 const Summoner = function () {
     const { getProfile } = useAuth();
     const [masteries, setMasteries] = useState([]);
     const [score, setScore] = useState([]);
+    const [show, setShow] = useState(10);
+
     useEffect(() => {
         fetchMasteries();
         fetchScore();
@@ -22,27 +25,28 @@ const Summoner = function () {
         setScore(data);
     }
 
-    // const handleSubmit = event => {
-    //     event.preventDefault();
-    //     submitSummoner();
-    // };
-
     return (
         <div>
             <h2 className="sum-name">Hello, {getProfile().name}</h2>
             <h3 className="sum-name">Mastery Level: {score}</h3>
             <ol>
-                {masteries.map(mastery => {
+                {masteries.slice(0, show).map(mastery => {
                     return (
                         <li key={mastery.championId}>
-                            <div className="card mx-auto container">
+                            <div className="card mx-auto">
                                 <div className="row">
-                                    <img src={`http://ddragon.leagueoflegends.com/cdn/11.1.1/img/champion/${mastery.champion.image.full}`} className="champ-img img-fluid" alt="champion"></img>
-                                    <div className="card-body">
-                                        <h2 className="card-title">{mastery.champion.name}</h2>
-                                        <h3 className="card-text">Mastery level: {mastery.championLevel}</h3>
-                                        <h4 className="card-text">Mastery points: {mastery.championPoints}</h4>
-                                        <p className="card-text">{`Earned chest: ${mastery.chestGranted}`}</p>
+                                    <div className="col-3"><img src={`http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${mastery.champion.id}_0.jpg`} alt="champion"></img></div>
+                                    <div className="col-6">
+                                        <div className="card-body">
+                                            <h2 className="card-title">{mastery.champion.name} -- {mastery.champion.title}</h2>
+                                            <h3 className="card-text">Mastery level: {mastery.championLevel}</h3>
+                                            <h4 className="card-text">Mastery points: {mastery.championPoints}</h4>
+                                            <br></br>
+                                            <img src={lolchest} alt="lol chest" className={`chest-img ${!mastery.chestGranted ? 'grey' : ''}`}></img>
+                                        </div>
+                                    </div>
+                                    <div className="col-3">
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -50,6 +54,7 @@ const Summoner = function () {
                     );
                 })}
             </ol>
+            <button className="btn btn-primary" onClick={() => setShow(show + 10)}>Show more!</button>
         </div>
     );
 };
