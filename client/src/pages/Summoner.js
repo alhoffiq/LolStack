@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import useAuth from '../hooks/auth';
+import lolchest from '../assets/lolchest.png';
 
 const Summoner = function () {
     const { getProfile } = useAuth();
@@ -38,10 +39,10 @@ const Summoner = function () {
                                     <div className="col-6">
                                         <div className="card-body">
                                             <h2 className="card-title">{mastery.champion.name} -- {mastery.champion.title}</h2>
-                                            <h3 className="card-text">{mastery.champion.title}</h3>
                                             <h3 className="card-text">Mastery level: {mastery.championLevel}</h3>
                                             <h4 className="card-text">Mastery points: {mastery.championPoints}</h4>
-                                            <p className="card-text">{`Earned chest: ${mastery.chestGranted}`}</p>
+                                            <br></br>
+                                            <img src={lolchest} alt="lol chest" className={`chest-img ${!mastery.chestGranted ? 'grey' : ''}`}></img>
                                         </div>
                                     </div>
                                     <div className="col-3">

@@ -70,7 +70,7 @@ const Login = () => {
                     <button type='button' className='btn btn-dark'>Login</button>
                 </form>
             </div>
-            <div classname='row'>
+            <div className='row'>
                 <div className='col'>
                     <p>
                         Need an account? <button type='button' className='btn btn-dark' onClick={() => toggleRedirect(true)}>Signup Here</button>

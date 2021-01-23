@@ -14,3 +14,12 @@
 .sum-name {
     text-align: center;
 }
+
+.chest-img {
+    width: 40%;
+    height: auto;
+}
+
+.grey {
+    filter: grayscale(100%);
+}
