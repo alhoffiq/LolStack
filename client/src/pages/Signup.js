@@ -37,7 +37,7 @@ const Signup = () => {
     }
 
     return (
-        <div>
+        <div class ="container-fluid signupPage">
             <div className='row justify-content-center'>
                 <div className='col-4'>
                     <h2>
@@ -80,11 +80,10 @@ const Signup = () => {
                 </div>
             </form>
             <br />
-            <div classname='row'>
+            <div className='row'>
                 <div className='col'>
-                    <p>
-                        Already have an account? <button type='submit' className='btn btn-dark' onClick={() => toggleRedirect(true)}>Login</button>
-                    </p>
+                    <label>Already have an Account?</label>
+                    <button type='submit' className='btn btn-dark' onClick={() => toggleRedirect(true)}>Login</button>
                 </div>
             </div>
         </div>

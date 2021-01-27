@@ -35,11 +35,11 @@ const Login = () => {
     }
 
     return (
-        <div>
+        <div className="container-fluid loginPage">
             <div className='row justify-content-center'>
                 <div className='col-4'>
                     <h2>
-                        Welcome to LolStack!
+                        Welcome to Lol Stack
                     </h2>
                 </div>
             </div>
@@ -64,16 +64,14 @@ const Login = () => {
                         value={password}
                         onChange={event => setPassword(event.target.value)}
                     />
+                    <button type='submit' className='btn btn-dark loginBtn'>Login</button>
                 </div>
-                <br />
-                <button type='submit' className='btn btn-dark'>Login</button>
             </form>
             <br />
             <div className='row'>
                 <div className='col'>
-                    <p>
-                        Need an account? <button type='submit' className='btn btn-dark' onClick={() => toggleRedirect(true)}>Signup here</button>
-                    </p>
+                    <label>Need an Account?</label>
+                    <button type='submit' className='btn btn-dark signupBtn' onClick={() => toggleRedirect(true)}>Signup here</button>
                 </div>
             </div>
         </div>

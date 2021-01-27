@@ -63,3 +63,24 @@ nav {
 a {
     color: #4c51bf!important;
 }
+.signupPage {
+    background-image: url("https://images.alphacoders.com/656/656584.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: rgb(255, 0, 0);
+}
+.loginPage {
+    background-image: url("https://images.alphacoders.com/656/656584.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: rgb(255, 0, 0); 
+}
+.signupBtn {
+    float:inline-end;
+    margin:20px;
+}
+
+.loginBtn {
+    float:inline-end;
+    margin:20px;
+}
