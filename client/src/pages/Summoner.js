@@ -69,8 +69,8 @@ const Summoner = function () {
             </ol>
             <button className="btn btn-primary" onClick={() => setShow(show + 10)}>Show more</button>
             <button className="btn btn-primary" onClick={() => setShow(show + 999)}>Show all!</button>
-            <br></br>
-        </div>
+            <h1>.</h1>
+        </div> // Jank solution to get the buttons above the footer :)
     );
 };
 

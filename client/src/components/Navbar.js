@@ -3,9 +3,9 @@ import useAuth from '../hooks/auth';
 const Navbar = () => {
     const { isLoggedIn, logout, getProfile } = useAuth();
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav className="navbar navbar-expand-lg navbar-dark">
             <div className="container-fluid">
-                <h1 className="navbar-brand">LOL Stack</h1>
+                <h1 className="navbar-brand top">LoLStack</h1>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -15,7 +15,7 @@ const Navbar = () => {
                         <li><Link to='/summoners' className="nav-link">Summoner</Link></li>
                         {isLoggedIn() ?
                             <>
-                                <li>Hello, {getProfile().name}</li>
+                                <li><p id="name">{getProfile().name}</p></li>
                                 <li><Link onClick={() => logout()} to='/' className="nav-link">Logout</Link></li>
                             </>
                             :
