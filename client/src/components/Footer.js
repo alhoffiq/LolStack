@@ -1,12 +1,10 @@
 const Footer = () => {
     return (
-        <footer className="footer mt-auto py-3 bg-dark">
-            <div className="container">
-                <span className="text-muted">Footer</span>
+        <footer className="footer text-center">
+            <p className = "text-center">LOL Stack 2021</p>
+            <div className="container-fluid">
             </div>
         </footer>
     );
 };
-
 export default Footer;
-

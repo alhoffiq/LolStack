@@ -80,7 +80,7 @@ const Signup = () => {
                 </div>
             </form>
             <br />
-            <div classname='row'>
+            <div className='row'>
                 <div className='col'>
                     <p>
                         Already have an account? <button type='submit' className='btn btn-dark' onClick={() => toggleRedirect(true)}>Login</button>
