@@ -1,9 +1,6 @@
 .card {
     width: 100%;
-    padding-left: 10%;
-
-    margin-bottom: 50px;
-    margin-top: 15%;
+    margin-bottom: 5px;
     color: #4c51bf;
     border: 5px solid!important;
     border-color: #4c51bf!important;
@@ -68,32 +65,51 @@ a {
 }
 
 .footer {
- background-color: #18181a;
+ background-color: #1B1A29;
  color:white;
  text-align: center;   
  font-style: italic;
  font-size: 17px;
- position: fixed;
- width: 100%;
- bottom: 0%;
- height: 60px;
- line-height: 60px;
 }
-h2{
+
+.top {
     font-family: fantasy;
     background-color: #4c51bf;
     border-radius:60px;
 }
-h3{
-    font-family: fantasy;
-    background-color: #4c51bf;
-    border-radius: 60px;
-}
+
 .input{
     border-radius: 50%;
 }
+
 body {
     background-image: url("https://images.alphacoders.com/656/656584.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
+}
+
+html, body { height: 100% }
+
+.btn {
+    margin: 5px;
+}
+
+.main {
+    min-height: 100vh;
+    position: relative;
+}
+
+footer {
+    position: absolute;
+    bottom:0;
+    width: 100%
+}
+
+.navbar {
+    background-color: #1B1A29!important;
+}
+
+#name {
+    color:  #4c51bf;
+    font-style: italic;
 }
