@@ -69,6 +69,7 @@ const Summoner = function () {
             </ol>
             <button className="btn btn-primary" onClick={() => setShow(show + 10)}>Show more</button>
             <button className="btn btn-primary" onClick={() => setShow(show + 999)}>Show all!</button>
+            <br></br>
         </div>
     );
 };

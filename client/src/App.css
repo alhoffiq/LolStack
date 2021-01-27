@@ -63,3 +63,26 @@ nav {
 a {
     color: #4c51bf!important;
 }
+
+body {
+    background-image: url("https://images.alphacoders.com/656/656584.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+html, body { height: 100% }
+
+.btn {
+    margin: 5px;
+}
+
+.main {
+    min-height: 100vh;
+    position: relative;
+}
+
+footer {
+    position: absolute;
+    bottom:0;
+    width: 100%
+}

@@ -8,7 +8,7 @@ const Navbar = () => {
             <nav className="bg-indigo-700 shadow-lg">
                 <div className="container mx-auto">
                     <div className="sm:flex justify-center">
-                        <a href="/About" className="text-white text-3xl font-bold p-3">LoLStack</a>
+                        <h1 className="text-white text-3xl font-bold p-3">LoLStack</h1>
                         <ul className="text-gray-400 sm:self-center text-xl border-t sm:border-none">
 
                             <li className="sm:inline-block"><Link to="/" className="p-3 hover: text-white">Home</Link></li>

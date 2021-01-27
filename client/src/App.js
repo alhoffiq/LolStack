@@ -36,7 +36,7 @@ function App() {
     return (
         <Router>
             <Navbar />
-            <div className="container">
+            <div className="container main">
                 <Switch>
                     <Route exact path='/'>
                         <Home />
@@ -51,8 +51,8 @@ function App() {
                         <Summoner />
                     </PrivateRoute>
                 </Switch>
+                <Footer />
             </div>
-            <Footer />
         </Router>
     );
 }
