@@ -37,7 +37,12 @@ const Signup = () => {
     }
 
     return (
+<<<<<<< HEAD
         <div class ="container-fluid signupPage">
+=======
+        <div className="card text-white mb-3">
+            <div className="card-body"></div>
+>>>>>>> origin
             <div className='row justify-content-center'>
                 <div className='col-4'>
                     <h2>
