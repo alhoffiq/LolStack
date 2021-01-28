@@ -35,20 +35,11 @@ const Login = () => {
     }
 
     return (
-<<<<<<< HEAD
-        <div className="container-fluid loginPage">
-            <div className='row justify-content-center'>
-                <div className='col-4'>
-                    <h2>
-                        Welcome to Lol Stack
-                    </h2>
-=======
         <div className="card text-white mb-3">
             <div className="card-body"></div>
             <div className='row justify-content-center'>
                 <div className='col-4'>
                     <h2>Welcome to LolStack!</h2>
->>>>>>> origin
                 </div>
             </div>
             <form onSubmit={handleSubmit}>
