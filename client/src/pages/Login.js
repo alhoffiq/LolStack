@@ -63,16 +63,14 @@ const Login = () => {
                         value={password}
                         onChange={event => setPassword(event.target.value)}
                     />
+                    <button type='submit' className='btn btn-dark loginBtn'>Login</button>
                 </div>
-                <br />
-                <button type='submit' className='btn btn-dark'>Login</button>
             </form>
             <br />
             <div className='row'>
                 <div className='col'>
-                    <p>
-                        Need an account? <button type='submit' className='btn btn-dark' onClick={() => toggleRedirect(true)}>Signup here</button>
-                    </p>
+                    <label>Need an Account?</label>
+                    <button type='submit' className='btn btn-dark signupBtn' onClick={() => toggleRedirect(true)}>Signup here</button>
                 </div>
             </div>
         </div>

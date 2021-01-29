@@ -37,58 +37,59 @@ const Signup = () => {
     }
 
     return (
-        <div className="card text-white mb-3">
-            <div className="card-body"></div>
-            <div className='row justify-content-center'>
-                <div className='col-4'>
-                    <h2>
-                        Sign-Up
-                    </h2>
+        <body>
+            <div className="card text-white mb-3">
+                <div className="card-body"></div>
+                <div className='row justify-content-center'>
+                    <div className='col-4'>
+                        <h2>
+                            Sign-Up
+                        </h2>
+                    </div>
+                </div>
+                <form onSubmit={handleSubmit}>
+                    <div className='col'>
+                        <label htmlFor='email'>Email:</label>
+                        <input
+                            name='email'
+                            type='email'
+                            autoComplete='username'
+                            value={email}
+                            onChange={event => setEmail(event.target.value)}
+                        />
+                    </div>
+                    <br />
+                    <div className='col'>
+                        <label htmlFor='password'>Password:</label>
+                        <input
+                            name='password'
+                            type='password'
+                            autoComplete='password'
+                            value={password}
+                            onChange={event => setPassword(event.target.value)}
+                        />
+                    </div>
+                    <br />
+                    <div className='col'>
+                        <label htmlFor='name'>Summoner Name:</label>
+                        <input
+                            name='name'
+                            type='text'
+                            value={name}
+                            onChange={event => setName(event.target.value)}
+                        />
+                        <button type='submit' className='btn btn-dark'>Signup</button>
+                    </div>
+                </form>
+                <br />
+                <div className='row'>
+                    <div className='col'>
+                        <label>Already have an Account?</label>
+                        <button type='submit' className='btn btn-dark' onClick={() => toggleRedirect(true)}>Login</button>
+                    </div>
                 </div>
             </div>
-            <form onSubmit={handleSubmit}>
-                <div className='col'>
-                    <label htmlFor='email'>Email:</label>
-                    <input
-                        name='email'
-                        type='email'
-                        autoComplete='username'
-                        value={email}
-                        onChange={event => setEmail(event.target.value)}
-                    />
-                </div>
-                <br />
-                <div className='col'>
-                    <label htmlFor='password'>Password:</label>
-                    <input
-                        name='password'
-                        type='password'
-                        autoComplete='password'
-                        value={password}
-                        onChange={event => setPassword(event.target.value)}
-                    />
-                </div>
-                <br />
-                <div className='col'>
-                    <label htmlFor='name'>Summoner Name:</label>
-                    <input
-                        name='name'
-                        type='text'
-                        value={name}
-                        onChange={event => setName(event.target.value)}
-                    />
-                    <button type='submit' className='btn btn-dark'>Signup</button>
-                </div>
-            </form>
-            <br />
-            <div className='row'>
-                <div className='col'>
-                    <p>
-                        Already have an account? <button type='submit' className='btn btn-dark' onClick={() => toggleRedirect(true)}>Login</button>
-                    </p>
-                </div>
-            </div>
-        </div>
+        </body>
     );
 };
 
