@@ -38,12 +38,8 @@ const Signup = () => {
 
     return (
         <body>
+            <h1 className="text-center top">Sign-Up Form</h1>
             <div className="card text-white mb-3">
-                <div className='row justify-content-center'>
-                    <h2>
-                        Sign-Up
-                    </h2>
-                </div>
                 <form onSubmit={handleSubmit}>
                     <div className='col'>
                         <label htmlFor='email'>Email:</label>
@@ -75,14 +71,14 @@ const Signup = () => {
                             value={name}
                             onChange={event => setName(event.target.value)}
                         />
-                        <button type='submit' className='btn btn-dark'>Signup</button>
+                        <button type='submit' className='btn btn-info btn-sm'>Signup</button>
                     </div>
                 </form>
                 <br />
                 <div className='row'>
                     <div className='col'>
                         <label>Already have an Account?</label>
-                        <button type='submit' className='btn btn-dark' onClick={() => toggleRedirect(true)}>Login</button>
+                        <button type='submit' className='btn btn-info btn-sm' onClick={() => toggleRedirect(true)}>Login</button>
                     </div>
                 </div>
             </div>

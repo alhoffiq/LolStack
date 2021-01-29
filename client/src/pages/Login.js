@@ -35,42 +35,42 @@ const Login = () => {
     }
 
     return (
-        <div className="card text-white col-12">
-            <div className='row justify-content-center'>
-                <h2>Welcome to LolStack!</h2>
-            </div>
-            <form onSubmit={handleSubmit}>
-                <div className='col'>
-                    <label htmlFor='email'>Email: </label>
-                    <input
-                        name='email'
-                        type='email'
-                        autoComplete='username'
-                        value={email}
-                        onChange={event => setEmail(event.target.value)}
-                    />
-                </div>
+        <body>
+            <h1 className="text-center top">Please enter your credentials to begin</h1>
+            <div className="card text-white col-12">
+                <form onSubmit={handleSubmit}>
+                    <div className='col'>
+                        <label htmlFor='email'>Email: </label>
+                        <input
+                            name='email'
+                            type='email'
+                            autoComplete='username'
+                            value={email}
+                            onChange={event => setEmail(event.target.value)}
+                        />
+                    </div>
+                    <br />
+                    <div className='col'>
+                        <label htmlFor='password'>Password:</label>
+                        <input
+                            name='password'
+                            type='password'
+                            autoComplete='password'
+                            value={password}
+                            onChange={event => setPassword(event.target.value)}
+                        />
+                        <button type='submit' className='btn btn-info btn-sm loginBtn'>Login</button>
+                    </div>
+                </form>
                 <br />
-                <div className='col'>
-                    <label htmlFor='password'>Password:</label>
-                    <input
-                        name='password'
-                        type='password'
-                        autoComplete='password'
-                        value={password}
-                        onChange={event => setPassword(event.target.value)}
-                    />
-                    <button type='submit' className='btn btn-dark loginBtn'>Login</button>
-                </div>
-            </form>
-            <br />
-            <div className='row'>
-                <div className='col'>
-                    <label>Need an Account?</label>
-                    <button type='submit' className='btn btn-dark signupBtn' onClick={() => toggleRedirect(true)}>Signup here</button>
+                <div className='row'>
+                    <div className='col'>
+                        <label>Need an Account?</label>
+                        <button type='submit' className='btn btn-info btn-sm signupBtn' onClick={() => toggleRedirect(true)}>Signup here</button>
+                    </div>
                 </div>
             </div>
-        </div>
+        </body>
     );
 };
 export default Login;
