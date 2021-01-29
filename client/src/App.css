@@ -134,3 +134,7 @@ footer {
     color:  #4c51bf;
     font-style: italic;
 }
+
+input { 
+    color: black!important;
+}
