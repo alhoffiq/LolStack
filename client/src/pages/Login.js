@@ -35,42 +35,52 @@ const Login = () => {
     }
 
     return (
-        <div className="card text-white mb-3">
-            <div className="card-body"></div>
-            <div className='row justify-content-center'>
-                <div className='col-4'>
-                    <h2>Welcome to LolStack!</h2>
+        <div className='container box'>
+            <div className="card text-white mb-3">
+                <div className="card-body"></div>
+                <div className='row justify-content-center'>
+                    <div>
+                        <h2>Welcome to LolStack!</h2>
+                    </div>
                 </div>
-            </div>
-            <form onSubmit={handleSubmit}>
-                <div className='col'>
-                    <label htmlFor='email'>Email: </label>
-                    <input
-                        name='email'
-                        type='email'
-                        autoComplete='username'
-                        value={email}
-                        onChange={event => setEmail(event.target.value)}
-                    />
+                <div className='row justify-content-center'>
+                    <form onSubmit={handleSubmit}>
+                        <div className='row justify-content-center'>
+                            <label htmlFor='email'>Email: </label>
+                        </div>
+                        <div className='row justify-content-center'>
+                            <input
+                                name='email'
+                                type='email'
+                                autoComplete='username'
+                                value={email}
+                                onChange={event => setEmail(event.target.value)}
+                            />
+                        </div>
+                        <br />
+                        <div className='row justify-content-center'>
+                            <label htmlFor='password'>Password:</label>
+                        </div>
+                        <div className='row justify-content-center'>
+                            <input
+                                name='password'
+                                type='password'
+                                autoComplete='password'
+                                value={password}
+                                onChange={event => setPassword(event.target.value)}
+                            />
+                        </div>
+                        <div className='row justify-content-center'>
+                            <button type='submit' className='btn btn-dark loginBtn'>Login</button>
+                        </div>
+                    </form>
                 </div>
                 <br />
-                <div className='col'>
-                    <label htmlFor='password'>Password:</label>
-                    <input
-                        name='password'
-                        type='password'
-                        autoComplete='password'
-                        value={password}
-                        onChange={event => setPassword(event.target.value)}
-                    />
-                    <button type='submit' className='btn btn-dark loginBtn'>Login</button>
-                </div>
-            </form>
-            <br />
-            <div className='row'>
-                <div className='col'>
-                    <label>Need an Account?</label>
-                    <button type='submit' className='btn btn-dark signupBtn' onClick={() => toggleRedirect(true)}>Signup here</button>
+                <div className='row justify-content-center'>
+                    <div>
+                        <label>Need an Account?</label>
+                        <button type='submit' className='btn btn-dark signupBtn' onClick={() => toggleRedirect(true)}>Signup here</button>
+                    </div>
                 </div>
             </div>
         </div>

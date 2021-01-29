@@ -37,59 +37,91 @@ const Signup = () => {
     }
 
     return (
-        <body>
+        <div className='container box'>
             <div className="card text-white mb-3">
                 <div className="card-body"></div>
                 <div className='row justify-content-center'>
-                    <div className='col-4'>
-                        <h2>
-                            Sign-Up
-                        </h2>
+                    <div>
+                        <h2>Sign-Up</h2>
                     </div>
                 </div>
-                <form onSubmit={handleSubmit}>
-                    <div className='col'>
-                        <label htmlFor='email'>Email:</label>
-                        <input
-                            name='email'
-                            type='email'
-                            autoComplete='username'
-                            value={email}
-                            onChange={event => setEmail(event.target.value)}
-                        />
-                    </div>
-                    <br />
-                    <div className='col'>
-                        <label htmlFor='password'>Password:</label>
-                        <input
-                            name='password'
-                            type='password'
-                            autoComplete='password'
-                            value={password}
-                            onChange={event => setPassword(event.target.value)}
-                        />
-                    </div>
-                    <br />
-                    <div className='col'>
-                        <label htmlFor='name'>Summoner Name:</label>
-                        <input
-                            name='name'
-                            type='text'
-                            value={name}
-                            onChange={event => setName(event.target.value)}
-                        />
-                        <button type='submit' className='btn btn-dark'>Signup</button>
-                    </div>
-                </form>
+                <div className='row justify-content-center'>
+                    <form onSubmit={handleSubmit}>
+                        <div className='row'>
+                            <div className='col'>
+                                <div className='row justify-content-center'>
+                                    <div>
+                                        <label htmlFor='email'>Email:</label>
+                                    </div>
+                                </div>
+                                <div className='row justify-content-center'>
+                                    <div>
+                                        <input
+                                            name='email'
+                                            type='email'
+                                            autoComplete='username'
+                                            value={email}
+                                            onChange={event => setEmail(event.target.value)}
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div className='row'>
+                            <div className='col'>
+                                <div className='row justify-content-center'>
+                                    <div>
+                                        <label htmlFor='password'>Password:</label>
+                                    </div>
+                                </div>
+                                <div className='row justify-content-center'>
+                                    <div>
+                                        <input
+                                            name='password'
+                                            type='password'
+                                            autoComplete='password'
+                                            value={password}
+                                            onChange={event => setPassword(event.target.value)}
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div className='row'>
+                            <div className='col'>
+                                <div className='row justify-content-center'>
+                                    <div>
+                                        <label htmlFor='summoner'>Summoner Name:</label>
+                                    </div>
+                                </div>
+                                <div className='row justify-content-center'>
+                                    <div>
+                                        <input
+                                            name='summoner'
+                                            type='text'
+                                            value={name}
+                                            onChange={event => setName(event.target.value)}
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='row justify-content-center'>
+                            <button type='submit' className='btn btn-dark'>Signup</button>
+                        </div>
+                    </form>
+                </div>
                 <br />
-                <div className='row'>
-                    <div className='col'>
+                <div className='row justify-content-center'>
+                    <div>
                         <label>Already have an Account?</label>
                         <button type='submit' className='btn btn-dark' onClick={() => toggleRedirect(true)}>Login</button>
                     </div>
                 </div>
             </div>
-        </body>
+        </div>
     );
 };
 

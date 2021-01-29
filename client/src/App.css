@@ -63,18 +63,7 @@ nav {
 a {
     color: #4c51bf!important;
 }
-.signupPage {
-    background-image: url("https://images.alphacoders.com/656/656584.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: rgb(255, 0, 0);
-}
-.loginPage {
-    background-image: url("https://images.alphacoders.com/656/656584.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: rgb(255, 0, 0); 
-}
+
 .signupBtn {
     float:inline-end;
     margin:20px;
@@ -137,4 +126,21 @@ footer {
 
 input { 
     color: black!important;
+}
+
+.box {
+    width: 50vw!important;
+    margin-top: 50px!important;
+}
+
+.home {
+    width: 75vw!important;
+    margin-top: 50px!important;
+}
+
+.nv {
+    margin-left: 0!important;
+    margin-right: 0!important;
+    padding-right: 0!important;
+    max-width: 100vw!important;
 }
