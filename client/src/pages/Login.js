@@ -35,12 +35,9 @@ const Login = () => {
     }
 
     return (
-        <div className="card text-white mb-3">
-            <div className="card-body"></div>
+        <div className="card text-white col-12">
             <div className='row justify-content-center'>
-                <div className='col-4'>
-                    <h2>Welcome to LolStack!</h2>
-                </div>
+                <h2>Welcome to LolStack!</h2>
             </div>
             <form onSubmit={handleSubmit}>
                 <div className='col'>

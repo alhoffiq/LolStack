@@ -39,13 +39,10 @@ const Signup = () => {
     return (
         <body>
             <div className="card text-white mb-3">
-                <div className="card-body"></div>
                 <div className='row justify-content-center'>
-                    <div className='col-4'>
-                        <h2>
-                            Sign-Up
-                        </h2>
-                    </div>
+                    <h2>
+                        Sign-Up
+                    </h2>
                 </div>
                 <form onSubmit={handleSubmit}>
                     <div className='col'>
