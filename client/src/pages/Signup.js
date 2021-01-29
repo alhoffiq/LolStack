@@ -57,6 +57,7 @@ const Signup = () => {
                                 <div className='row justify-content-center'>
                                     <div>
                                         <input
+                                            className='form-control'
                                             name='email'
                                             type='email'
                                             autoComplete='username'
@@ -78,6 +79,7 @@ const Signup = () => {
                                 <div className='row justify-content-center'>
                                     <div>
                                         <input
+                                            className='form-control'
                                             name='password'
                                             type='password'
                                             autoComplete='password'
@@ -99,6 +101,7 @@ const Signup = () => {
                                 <div className='row justify-content-center'>
                                     <div>
                                         <input
+                                            className='form-control'
                                             name='summoner'
                                             type='text'
                                             value={name}

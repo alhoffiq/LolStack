@@ -14,6 +14,10 @@ function Home() {
                     <br></br>
                     <br></br>
                     <p className="card-text text-center">About</p>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <p className="card-text text-center">start here -- link to signup</p>
                 </div>
             </div>
         </div>

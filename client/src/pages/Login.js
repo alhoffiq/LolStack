@@ -50,6 +50,7 @@ const Login = () => {
                         </div>
                         <div className='row justify-content-center'>
                             <input
+                                className='form-control'
                                 name='email'
                                 type='email'
                                 autoComplete='username'
@@ -63,6 +64,7 @@ const Login = () => {
                         </div>
                         <div className='row justify-content-center'>
                             <input
+                                className='form-control'
                                 name='password'
                                 type='password'
                                 autoComplete='password'
