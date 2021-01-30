@@ -157,3 +157,12 @@ input {
 .title {
     width: 75%;
 }
+
+.home-title {
+    padding-top: 20px;
+    color: #4c51bf;
+}
+
+.starter {
+    text-decoration: underline;
+}
