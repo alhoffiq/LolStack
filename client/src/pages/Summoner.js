@@ -30,13 +30,15 @@ const Summoner = function () {
             <div>
                 {masteries.slice(0, 1).map(mastery => {
                     return (
-                        <div className="col-lg" key="0">
-                            <div className="img-container">
-                                <div className="positioning">
-                                    <h1 className="sum-name">{getProfile().name}</h1>
-                                    <h3 className="sum-name">Mastery Level: {score}</h3>
+                        <div className="row">
+                            <div className="col-lg" key="0">
+                                <div className="img-container">
+                                    <div className="positioning">
+                                        <h1 className="sum-name">{getProfile().name}</h1>
+                                        <h3 className="sum-name">Mastery Level: {score}</h3>
+                                    </div>
+                                    <img src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${mastery.champion.id}_0.jpg`} alt="champ splash"></img>
                                 </div>
-                                <img src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${mastery.champion.id}_0.jpg`} alt="champ splash"></img>
                             </div>
                         </div>
                     );
