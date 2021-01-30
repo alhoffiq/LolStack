@@ -1,18 +1,26 @@
 function Home() {
 
     return (
-        <body>
+        <div className='container home'>
             <h3 className="text-center top"> Welcome to LoLStack</h3>
             <div className="input-group mb-3"></div>
             <div className="input-group-prepend">
             </div>
             <div className="card text-white mb-3">
                 <div className="card-body">
-                    <h5 className="card-title">About Us</h5>
-                    <p className="card-text">League of Legends is the second best MMO on the market (Next to World of Warcraft)League of Legends is the second best MMO on the market (Next to World of Warcraft)League of Legends is the second best MMO on the market (Next to World of Warcraft)League of Legends is the second best MMO on the market (Next to World of Warcraft)League of Legends is the second best MMO on the market (Next to World of Warcraft)League of Legends is the second best MMO on the market (Next to World of Warcraft)League of Legends is the second best MMO on the market (Next to World of Warcraft)League of Legends is the second best MMO on the market (Next to World of Warcraft)League of Legends is the second best MMO on the market (Next to World of Warcraft)League of Legends is the second best MMO on the market (Next to World of Warcraft)League of Legends is the second best MMO on the market (Next to World of Warcraft)League of Legends is the second best MMO on the market (Next to World of Warcraft)League of Legends is the second best MMO on the market (Next to World of Warcraft)League of Legends is the second best MMO on the market (Next to World of Warcraft)League of Legends is the second best MMO on the market (Next to World of Warcraft)</p>
+                    <h5 className="card-title text-center">Example card carousel</h5>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <p className="card-text text-center">About</p>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <p className="card-text text-center">start here -- link to signup</p>
                 </div>
             </div>
-        </body>
+        </div>
     );
 }
 export default Home;
