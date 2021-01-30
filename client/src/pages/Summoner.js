@@ -49,7 +49,7 @@ const Summoner = function () {
                             <div className="card mx-auto">
                                 <div className="row">
                                     <div className="col-3"><img src={`http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${mastery.champion.id}_0.jpg`} alt="champion"></img></div>
-                                    <div className="col-6">
+                                    <div className="col">
                                         <div className="card-body">
                                             <a href={`https://leagueoflegends.fandom.com/wiki/${mastery.champion.name}`} target="_blank" rel="noreferrer"><h2 className="card-title">{mastery.champion.name} -- {mastery.champion.title}</h2></a>
                                             <h3 className="card-text">Mastery level: {mastery.championLevel}</h3>
@@ -58,18 +58,21 @@ const Summoner = function () {
                                             <img src={lolchest} alt="lol chest" className={`chest-img ${!mastery.chestGranted ? 'grey' : ''}`}></img>
                                         </div>
                                     </div>
-                                    <div className="col-3">
-
-                                    </div>
                                 </div>
                             </div>
                         </li>
                     );
                 })}
             </ol>
-            <button className="btn btn-primary" onClick={() => setShow(show + 10)}>Show more</button>
-            <button className="btn btn-primary" onClick={() => setShow(show + 999)}>Show all!</button>
-            <h1>.</h1>
+            <div className="d-flex justify-content-center">
+                <button className="btn btn-primary" onClick={() => setShow(show + 10)}>Show more</button>
+                <button className="btn btn-primary" onClick={() => setShow(show + 999)}>Show all!</button>
+            </div>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
         </div> // Jank solution to get the buttons above the footer :)
     );
 };

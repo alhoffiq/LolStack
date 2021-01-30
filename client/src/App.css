@@ -16,7 +16,7 @@
 }
 
 .chest-img {
-    width: 40%;
+    width: 30%;
     height: auto;
 }
 
@@ -104,6 +104,9 @@ html, body { height: 100% }
 
 .btn {
     margin: 5px;
+    border: 3px solid!important;
+    border-color: #1B1A29!important;
+    background-color: #4c51bf!important;
 }
 
 .main {
