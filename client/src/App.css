@@ -109,12 +109,14 @@ html, body { height: 100% }
 .main {
     min-height: 100vh;
     position: relative;
+    width: 100%!important;
+    padding: 0!important;
 }
 
 footer {
     position: absolute;
     bottom:0;
-    width: 100%
+    width: 100%;
 }
 
 .navbar {
@@ -138,6 +140,8 @@ input {
 .home {
     width: 75vw!important;
     margin-top: 50px!important;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .nv {
@@ -145,4 +149,8 @@ input {
     margin-right: 0!important;
     padding-right: 0!important;
     max-width: 100vw!important;
+}
+
+.title {
+    width: 75%;
 }
