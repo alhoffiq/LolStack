@@ -7,7 +7,7 @@ const axios = require('axios');
  */
 router.get('/', isAuthenticated, function (req, res) {
     // we can pass in things in the query of a REST call!
-    console.log(req.user)
+    console.log(req.user);
     db.Summoner.find(req.query)
         .populate('user')
         .then(dbModel => res.json(dbModel))
