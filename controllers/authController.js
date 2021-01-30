@@ -60,7 +60,7 @@ router.post('/signup', async (req, res) => {
         const riotResponse = await axios({
             method: 'get',
             url: `https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${query}?api_key=${process.env.RIOTKEY}`
-        })
+        });
         const { puuid, accountId, id } = riotResponse.data;
         console.log('Name: ' + name);
         console.log('puuid: ' + puuid);
