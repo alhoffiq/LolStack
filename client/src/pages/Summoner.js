@@ -36,7 +36,7 @@ const Summoner = function () {
                                     <h1 className="sum-name">{getProfile().name}</h1>
                                     <h3 className="sum-name">Mastery Level: {score}</h3>
                                 </div>
-                                <img src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${mastery.champion.id}_0.jpg`} alt="champ splash"></img>
+                                <img src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${mastery.champion.id}_0.jpg`} alt="champ splash"></img>
                             </div>
                         </div>
                     );
@@ -48,7 +48,7 @@ const Summoner = function () {
                         <li key={mastery.championId}>
                             <div className="card mx-auto">
                                 <div className="row">
-                                    <div className="col-3"><img src={`http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${mastery.champion.id}_0.jpg`} alt="champion"></img></div>
+                                    <div className="col-3"><img src={`https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${mastery.champion.id}_0.jpg`} alt="champion"></img></div>
                                     <div className="col">
                                         <div className="card-body">
                                             <a href={`https://leagueoflegends.fandom.com/wiki/${mastery.champion.name}`} target="_blank" rel="noreferrer"><h2 className="card-title">{mastery.champion.name} -- {mastery.champion.title}</h2></a>
