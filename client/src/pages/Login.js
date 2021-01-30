@@ -40,7 +40,7 @@ const Login = () => {
                 <div className="card-body"></div>
                 <div className='row justify-content-center'>
                     <div>
-                        <h2>Welcome to LolStack!</h2>
+                        <h2>Welcome back!</h2>
                     </div>
                 </div>
                 <div className='row justify-content-center'>

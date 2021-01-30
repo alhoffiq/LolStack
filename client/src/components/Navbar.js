@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import useAuth from '../hooks/auth';
+
 const Navbar = () => {
     const { isLoggedIn, logout, getProfile } = useAuth();
     return (
@@ -14,11 +15,11 @@ const Navbar = () => {
                         <div className='col-1'>
                             <li><Link to="/" className="nav-link text-center">Home</Link></li>
                         </div>
-                        <div className='col-1'>
-                            <li><Link to='/summoners' className="nav-link text-center">Summoner</Link></li>
-                        </div>
                         {isLoggedIn() ?
                             <>
+                                <div className='col-1'>
+                                    <li><Link to='/summoners' className="nav-link text-center">Summoner</Link></li>
+                                </div>
                                 <div className='col-1'>
                                     <li><Link onClick={() => logout()} to='/' className="nav-link text-center">Logout</Link></li>
                                 </div>
@@ -34,7 +35,7 @@ const Navbar = () => {
                                 <div className='col-1'>
                                     <li><Link to="/login" className="nav-link text-center">Login</Link></li>
                                 </div>
-                                <div className='col-8'></div> 
+                                <div className='col-9'></div>
                             </>
                         }
                     </div>
