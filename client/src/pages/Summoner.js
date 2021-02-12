@@ -29,8 +29,8 @@ const Summoner = function () {
             <div>
                 {masteries.slice(0, 1).map(mastery => {
                     return (
-                        <div className="row">
-                            <div className="col-lg" key="0">
+                        <div className="row" key="splash">
+                            <div className="col-lg">
                                 <div className="img-container">
                                     <div className="positioning">
                                         <h1 className="sum-name">{getProfile().name}</h1>
@@ -67,7 +67,7 @@ const Summoner = function () {
             </ol>
             <div className="d-flex justify-content-center">
                 <button className="btn btn-primary" onClick={() => setShow(show + 10)}>Show more</button>
-                <button className="btn btn-primary" onClick={() => setShow(show + 999)}>Show all!</button>
+                <button className="btn btn-primary" onClick={() => setShow(masteries.length)}>Show all!</button>
             </div>
             <br></br>
             <br></br>
