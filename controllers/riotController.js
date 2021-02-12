@@ -7,7 +7,6 @@ const riotApi = process.env.RIOTKEY;
  */
 router.get('/masteries', isAuthenticated, async function (req, res) {
     // we can pass in things in the query of a REST call!
-    // console.log(req.user)
     const { data: masteryData } = await axios({
         method: 'get',
         url: `https://na1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/${req.user.summoner.id}?api_key=${riotApi}`
@@ -36,7 +35,6 @@ router.get('/masteries', isAuthenticated, async function (req, res) {
 
 router.get('/score', isAuthenticated, async function (req, res) {
     // we can pass in things in the query of a REST call!
-    // console.log(req.user)
     const data = await axios({
         method: 'get',
         url: `https://na1.api.riotgames.com/lol/champion-mastery/v4/scores/by-summoner/${req.user.summoner.id}?api_key=${riotApi}`

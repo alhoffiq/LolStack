@@ -62,10 +62,6 @@ router.post('/signup', async (req, res) => {
             url: `https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${query}?api_key=${process.env.RIOTKEY}`
         });
         const { puuid, accountId, id } = riotResponse.data;
-        console.log('Name: ' + name);
-        console.log('puuid: ' + puuid);
-        console.log('accountId: ' + accountId);
-        console.log('id: ' + id);
         const summoner = await db.Summoner.create({
             name: name,
             puuid: puuid,

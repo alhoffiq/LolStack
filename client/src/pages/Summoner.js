@@ -17,7 +17,6 @@ const Summoner = function () {
     async function fetchMasteries() {
         const { data } = await axios.get('/api/riot/masteries');
         setMasteries(data);
-        console.log(data[8]);
     }
 
     async function fetchScore() {
