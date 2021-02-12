@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import useAuth from '../hooks/auth';
-import lolchest from '../assets/lolchest.png';
+import ChampCard from '../components/ChampCard';
 
 const Summoner = function () {
     const { getProfile } = useAuth();
@@ -17,7 +17,6 @@ const Summoner = function () {
     async function fetchMasteries() {
         const { data } = await axios.get('/api/riot/masteries');
         setMasteries(data);
-        console.log(data[8]);
     }
 
     async function fetchScore() {
@@ -30,8 +29,8 @@ const Summoner = function () {
             <div>
                 {masteries.slice(0, 1).map(mastery => {
                     return (
-                        <div className="row">
-                            <div className="col-lg" key="0">
+                        <div className="row" key="splash">
+                            <div className="col-lg">
                                 <div className="img-container">
                                     <div className="positioning">
                                         <h1 className="sum-name">{getProfile().name}</h1>
@@ -47,28 +46,13 @@ const Summoner = function () {
             <ol>
                 {masteries.slice(0, show).map(mastery => {
                     return (
-                        <li key={mastery.championId}>
-                            <div className="card mx-auto">
-                                <div className="row">
-                                    <div className="col-3"><img src={`https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${mastery.champion.id}_0.jpg`} alt="champion"></img></div>
-                                    <div className="col">
-                                        <div className="card-body">
-                                            <a href={`https://leagueoflegends.fandom.com/wiki/${mastery.champion.name}`} target="_blank" rel="noreferrer"><h2 className="card-title">{mastery.champion.name} -- {mastery.champion.title}</h2></a>
-                                            <h3 className="card-text">Mastery level: {mastery.championLevel}</h3>
-                                            <h4 className="card-text">Mastery points: {mastery.championPoints}</h4>
-                                            <br></br>
-                                            <img src={lolchest} alt="lol chest" className={`chest-img ${!mastery.chestGranted ? 'grey' : ''}`}></img>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
+                        <ChampCard mastery={mastery} key={mastery.championId}/>
                     );
                 })}
             </ol>
             <div className="d-flex justify-content-center">
                 <button className="btn btn-primary" onClick={() => setShow(show + 10)}>Show more</button>
-                <button className="btn btn-primary" onClick={() => setShow(show + 999)}>Show all!</button>
+                <button className="btn btn-primary" onClick={() => setShow(masteries.length)}>Show all!</button>
             </div>
             <br></br>
             <br></br>
