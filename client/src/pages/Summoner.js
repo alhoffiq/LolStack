@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import useAuth from '../hooks/auth';
-import lolchest from '../assets/lolchest.png';
+import ChampCard from '../components/ChampCard';
 
 const Summoner = function () {
     const { getProfile } = useAuth();
@@ -46,22 +46,7 @@ const Summoner = function () {
             <ol>
                 {masteries.slice(0, show).map(mastery => {
                     return (
-                        <li key={mastery.championId}>
-                            <div className="card mx-auto">
-                                <div className="row">
-                                    <div className="col-3"><img src={`https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${mastery.champion.id}_0.jpg`} alt="champion"></img></div>
-                                    <div className="col">
-                                        <div className="card-body">
-                                            <a href={`https://leagueoflegends.fandom.com/wiki/${mastery.champion.name}`} target="_blank" rel="noreferrer"><h2 className="card-title">{mastery.champion.name} -- {mastery.champion.title}</h2></a>
-                                            <h3 className="card-text">Mastery level: {mastery.championLevel}</h3>
-                                            <h4 className="card-text">Mastery points: {mastery.championPoints}</h4>
-                                            <br></br>
-                                            <img src={lolchest} alt="lol chest" className={`chest-img ${!mastery.chestGranted ? 'grey' : ''}`}></img>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
+                        <ChampCard mastery={mastery} key={mastery.championId}/>
                     );
                 })}
             </ol>
