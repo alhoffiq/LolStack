@@ -167,3 +167,19 @@ input {
 .starter {
     text-decoration: underline;
 }
+
+.cardSplash {
+    display: none;
+}
+
+@media only screen and (max-width: 992px) {
+    .container {
+        width:100vw!important;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+  .cardImg {
+    display: none;
+    }
+}
