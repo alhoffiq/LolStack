@@ -29,7 +29,7 @@ const Summoner = function () {
             <div>
                 {masteries.slice(0, 1).map(mastery => {
                     return (
-                        <div className="row" key="splash">
+                        <div className="row splash" key="splash">
                             <div className="col-lg">
                                 <div className="img-container">
                                     <div className="positioning">

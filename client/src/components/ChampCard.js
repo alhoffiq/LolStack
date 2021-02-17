@@ -5,7 +5,7 @@ const ChampCard = ({ mastery }) => {
     return (
         <li key={mastery.championId}>
             <div className="card mx-auto">
-                <div className="row">
+                <div className="row champCard">
                     <div className="col-3"><img className="cardImg" src={`https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${mastery.champion.id}_0.jpg`} alt="champion"></img></div>
                     <div className="col">
                         <div className="card-body">
