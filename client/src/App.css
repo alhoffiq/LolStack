@@ -29,8 +29,6 @@
     float: left;
     position: relative;
     min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
     text-align: center;
 }
 .col-lg img {
@@ -167,8 +165,18 @@ input {
     text-decoration: underline;
 }
 
-.cardSplash {
-    display: none;
+.col, .col-lg {
+    padding-right: 0!important;
+    padding-left: 0!important;
+}
+
+.champCard {
+    width: 100%!important;
+}
+
+.splash {
+    margin-left: 0!important;
+    margin-right: 0!important;
 }
 
 @media only screen and (max-width: 992px) {
