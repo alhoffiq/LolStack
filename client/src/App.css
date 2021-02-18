@@ -16,7 +16,7 @@
 }
 
 .chest-img {
-    width: 30%;
+    width: 25%;
     height: auto;
 }
 
@@ -179,14 +179,40 @@ input {
     margin-right: 0!important;
 }
 
+.card-img-mob {
+    display: none;
+}
+
 @media only screen and (max-width: 992px) {
     .container {
         width:100vw!important;
     }
+
+    .chest-img {
+        width: 15%;
+    }
 }
 
 @media only screen and (max-width: 767px) {
-  .cardImg {
+  .card-img {
     display: none;
+    }
+
+    .card-data {
+        text-align: center!important;
+    }
+
+    .chest-img {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .card-img-mob {
+        display: block;
+    }
+
+    .chest-img {
+        width: 50%!important;
+        height: auto;
     }
 }
