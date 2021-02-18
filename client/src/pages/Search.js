@@ -21,10 +21,10 @@ const Search = () => {
             url: '/api/riot/search/mastery',
             data: { summoner: summoner },
         });
-        console.log(data.masteries);
         setMasteries(data.masteries);
         setSummonerName(data.summoner.name);
         searchScore(data.summoner.id);
+        unhideBtns();
     }
 
     async function searchScore(id) {
@@ -34,6 +34,13 @@ const Search = () => {
             data: { id: id },
         });
         setScore(data);
+    }
+
+    async function unhideBtns() {
+        const btns = document.getElementsByClassName('hide');
+        while (btns.length) {
+            btns[0].classList.remove('hide');
+        }
     }
 
 
@@ -87,8 +94,8 @@ const Search = () => {
                     })}
                 </ol>
                 <div className="d-flex justify-content-center">
-                    <button className="btn btn-primary" onClick={() => setShow(show + 10)}>Show more</button>
-                    <button className="btn btn-primary" onClick={() => setShow(masteries.length)}>Show all!</button>
+                    <button className="btn btn-primary hide" onClick={() => setShow(show + 10)}>Show more</button>
+                    <button className="btn btn-primary hide" onClick={() => setShow(masteries.length)}>Show all!</button>
                 </div>
                 <br></br>
                 <br></br>
