@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Summoner from './pages/Summoner';
+import Search from './pages/Search';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from './components/Footer';
 
@@ -49,6 +50,9 @@ function App() {
                     </Route>
                     <PrivateRoute exact path='/summoners'>
                         <Summoner />
+                    </PrivateRoute>
+                    <PrivateRoute exact path='/search'>
+                        <Search />
                     </PrivateRoute>
                 </Switch>
                 <Footer />

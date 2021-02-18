@@ -183,6 +183,10 @@ input {
     display: none;
 }
 
+.hide {
+    display: none!important;
+}
+
 @media only screen and (max-width: 992px) {
     .container {
         width:100vw!important;
