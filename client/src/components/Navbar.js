@@ -21,9 +21,12 @@ const Navbar = () => {
                                     <li><Link to='/summoners' className="nav-link text-center">Summoner</Link></li>
                                 </div>
                                 <div className='col-1'>
+                                    <li><Link to='/search' className="nav-link text-center">Search</Link></li>
+                                </div>
+                                <div className='col-1'>
                                     <li><Link onClick={() => logout()} to='/' className="nav-link text-center">Logout</Link></li>
                                 </div>
-                                <div className='col-9'>
+                                <div className='col-8'>
                                     <li><h5 className='text-right' id="name">{getProfile().name}</h5></li>
                                 </div>
                             </>

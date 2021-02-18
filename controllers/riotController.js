@@ -2,18 +2,15 @@ const router = require('express').Router();
 const isAuthenticated = require('../utils/middleware').isAuthenticated;
 const axios = require('axios');
 const riotApi = process.env.RIOTKEY;
-/**
- * Summoner - Read All
- */
-router.get('/masteries', isAuthenticated, async function (req, res) {
-    // we can pass in things in the query of a REST call!
+
+async function combineMasteries(summoner) {
     const { data: masteryData } = await axios({
         method: 'get',
-        url: `https://na1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/${req.user.summoner.id}?api_key=${riotApi}`
+        url: `https://na1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/${summoner}?api_key=${riotApi}`
     });
     const { data: championJson } = await axios({
         method: 'get',
-        url: 'http://ddragon.leagueoflegends.com/cdn/11.1.1/data/en_US/champion.json'
+        url: 'http://ddragon.leagueoflegends.com/cdn/11.4.1/data/en_US/champion.json'
     });
 
     const champions = championJson.data;
@@ -28,9 +25,11 @@ router.get('/masteries', isAuthenticated, async function (req, res) {
         const champion = championMap.get(`${id}`);
         return { ...mastery, champion: champion };
     });
+    return (masteryWithChampionData);
+}
 
-    res.json(masteryWithChampionData);
-
+router.get('/masteries', isAuthenticated, async function (req, res) {
+    res.json(await combineMasteries(req.user.summoner.id));
 });
 
 router.get('/score', isAuthenticated, async function (req, res) {
@@ -42,6 +41,26 @@ router.get('/score', isAuthenticated, async function (req, res) {
 
     res.json(data.data);
 
+});
+
+router.post('/search/mastery', isAuthenticated, async function (req, res) {
+    const query = (req.body.summoner.replace(/ /g, '%20'));
+    const summonerData = await axios({
+        method: 'get',
+        url: `https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${query}?api_key=${process.env.RIOTKEY}`
+    });
+    res.json({
+        masteries: await combineMasteries(summonerData.data.id),
+        summoner: summonerData.data,
+    });
+});
+
+router.post('/search/score', isAuthenticated, async function (req, res) {
+    const scoreData = await axios({
+        method: 'get',
+        url: `https://na1.api.riotgames.com/lol/champion-mastery/v4/scores/by-summoner/${req.body.id}?api_key=${riotApi}`
+    });
+    res.json(scoreData.data);
 });
 
 module.exports = router;

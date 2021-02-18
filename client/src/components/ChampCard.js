@@ -15,7 +15,7 @@ const ChampCard = ({ mastery }) => {
                             <br></br>
                             <div className="row">
                                 <div className="col card-img-mob">
-                                    <img className="card-img-mob card-data chest-img" src={`http://ddragon.leagueoflegends.com/cdn/11.4.1/img/champion/${mastery.champion.id}.png`} alt="champion"></img>
+                                    <img className="card-img-mob card-data chest-img" src={`https://ddragon.leagueoflegends.com/cdn/11.4.1/img/champion/${mastery.champion.id}.png`} alt="champion"></img>
                                 </div>
                                 <div className="col">
                                     <img src={lolchest} alt="lol chest" className={`chest-img card-data ${!mastery.chestGranted ? 'grey' : ''}`}></img>
