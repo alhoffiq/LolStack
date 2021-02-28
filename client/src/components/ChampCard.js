@@ -3,10 +3,7 @@ const dateFormat = require('dateformat');
 
 const ChampCard = ({ mastery }) => {
 
-    function getDate(epoch) {
-        const date = new Date(epoch);
-        return dateFormat(date, 'dddd, mmmm dS, yyyy, h:MM:ss TT');
-    }
+    const getDate = epoch => dateFormat(new Date(epoch), 'dddd, mmmm dS, yyyy, h:MM TT'); // turns given unix time to a readable date
 
     return (
         <li key={mastery.championId}>
