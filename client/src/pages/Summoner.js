@@ -14,12 +14,13 @@ const Summoner = function () {
         fetchScore();
     }, []);
 
-    async function fetchMasteries() {
+    async function fetchMasteries() { // gets an array of all champions played by a given summoner with attached mastery data
         const { data } = await axios.get('/api/riot/masteries');
         setMasteries(data);
+        //console.log(data);
     }
 
-    async function fetchScore() {
+    async function fetchScore() { // gets a given summoner's total mastery score
         const { data } = await axios.get('/api/riot/score');
         setScore(data);
     }

@@ -16,7 +16,7 @@
 }
 
 .chest-img {
-    width: 25%;
+    width: 20%;
     height: auto;
 }
 
@@ -198,8 +198,8 @@ input {
 }
 
 @media only screen and (max-width: 767px) {
-  .card-img {
-    display: none;
+    .card-img {
+        display: none;
     }
 
     .card-data {
@@ -218,5 +218,9 @@ input {
     .chest-img {
         width: 50%!important;
         height: auto;
+    }
+
+    .row {
+        margin: 0px!important;
     }
 }

@@ -1,6 +1,9 @@
 import lolchest from '../assets/lolchest.png';
+const dateFormat = require('dateformat');
 
 const ChampCard = ({ mastery }) => {
+
+    const getDate = epoch => dateFormat(new Date(epoch), 'dddd, mmmm dS, yyyy, h:MM TT'); // turns given unix time to a readable date
 
     return (
         <li key={mastery.championId}>
@@ -12,6 +15,7 @@ const ChampCard = ({ mastery }) => {
                             <a href={`https://leagueoflegends.fandom.com/wiki/${mastery.champion.name}`} target="_blank" rel="noreferrer"><h2 className="card-title card-data">{mastery.champion.name} -- {mastery.champion.title}</h2></a>
                             <h3 className="card-text card-data">Mastery level: {mastery.championLevel}</h3>
                             <h4 className="card-text card-data">Mastery points: {mastery.championPoints}</h4>
+                            <h5 className="card-text card-data">Last played: {`${getDate(mastery.lastPlayTime)}`}</h5>
                             <br></br>
                             <div className="row">
                                 <div className="col card-img-mob">
