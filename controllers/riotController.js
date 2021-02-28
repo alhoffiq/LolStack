@@ -3,17 +3,17 @@ const isAuthenticated = require('../utils/middleware').isAuthenticated;
 const axios = require('axios');
 const riotApi = process.env.RIOTKEY;
 
-async function combineMasteries(summoner) {
-    const { data: masteryData } = await axios({
+async function combineMasteries(summoner) { // Made this a function since the logic is the same between logged in summoner and searched one
+    const { data: masteryData } = await axios({ // Gets mastery data from given summoner
         method: 'get',
         url: `https://na1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/${summoner}?api_key=${riotApi}`
     });
-    const { data: championJson } = await axios({
+    const { data: championJson } = await axios({ // Gets a static data list of all champions, url needs to be updated every time a new champion is released
         method: 'get',
         url: 'http://ddragon.leagueoflegends.com/cdn/11.4.1/data/en_US/champion.json'
     });
 
-    const champions = championJson.data;
+    const champions = championJson.data; // All this combines to 2 so 1 object has all the data it needs to be displayed in a card
     const championMap = new Map();
 
     for (const championName in champions) {
@@ -33,7 +33,6 @@ router.get('/masteries', isAuthenticated, async function (req, res) {
 });
 
 router.get('/score', isAuthenticated, async function (req, res) {
-    // we can pass in things in the query of a REST call!
     const data = await axios({
         method: 'get',
         url: `https://na1.api.riotgames.com/lol/champion-mastery/v4/scores/by-summoner/${req.user.summoner.id}?api_key=${riotApi}`
@@ -42,6 +41,8 @@ router.get('/score', isAuthenticated, async function (req, res) {
     res.json(data.data);
 
 });
+
+// Separtate routes for searched summoner since data is in a slightly different format
 
 router.post('/search/mastery', isAuthenticated, async function (req, res) {
     const query = (req.body.summoner.replace(/ /g, '%20'));
