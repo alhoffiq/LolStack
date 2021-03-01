@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import useAuth from '../hooks/auth';
 import ChampCard from '../components/ChampCard';
+import SearchChamp from '../components/SearchChamp';
 
 const Summoner = function () {
     const { getProfile } = useAuth();
@@ -44,10 +45,23 @@ const Summoner = function () {
                     );
                 })}
             </div>
+
+            <div className="row text-center">
+                <div className="col-2">
+                    <button className="btn btn-primary" onClick={() => setShow(show + 10)}>Show more</button>
+                </div>
+                <div className="col-8">
+                    <SearchChamp />
+                </div>
+                <div className="col-2">
+                    <button className="btn btn-primary" onClick={() => setShow(masteries.length)}>Show all!</button>
+                </div>
+            </div>
+
             <ol>
                 {masteries.slice(0, show).map(mastery => {
                     return (
-                        <ChampCard mastery={mastery} key={mastery.championId}/>
+                        <ChampCard mastery={mastery} key={mastery.championId} />
                     );
                 })}
             </ol>

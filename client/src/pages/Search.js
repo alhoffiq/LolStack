@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import ChampCard from '../components/ChampCard';
+import SearchChamp from '../components/SearchChamp';
 
 const Search = () => {
     const [summoner, setSummoner] = useState('');
@@ -24,7 +25,7 @@ const Search = () => {
         setMasteries(data.masteries);
         setSummonerName(data.summoner.name);
         searchScore(data.summoner.id);
-        unhideBtns();
+        unhide();
     }
 
     async function searchScore(id) {
@@ -36,10 +37,10 @@ const Search = () => {
         setScore(data);
     }
 
-    async function unhideBtns() {
-        const btns = document.getElementsByClassName('hide');
-        while (btns.length) {
-            btns[0].classList.remove('hide');
+    async function unhide() {
+        const hidden = document.getElementsByClassName('hide');
+        while (hidden.length) {
+            hidden[0].classList.remove('hide');
         }
     }
 
@@ -86,6 +87,19 @@ const Search = () => {
                         );
                     })}
                 </div>
+
+                <div className="row text-center hide">
+                    <div className="col-2">
+                        <button className="btn btn-primary hide" onClick={() => setShow(show + 10)}>Show more</button>
+                    </div>
+                    <div className="col-8">
+                        <SearchChamp />
+                    </div>
+                    <div className="col-2">
+                        <button className="btn btn-primary hide" onClick={() => setShow(masteries.length)}>Show all!</button>
+                    </div>
+                </div>
+
                 <ol>
                     {masteries.slice(0, show).map(mastery => {
                         return (
