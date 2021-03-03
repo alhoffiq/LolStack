@@ -93,7 +93,10 @@ const Search = () => {
                         <button className="btn btn-primary hide" onClick={() => setShow(show + 10)}>Show more</button>
                     </div>
                     <div className="col-8">
-                        <SearchChamp />
+                        <SearchChamp
+                            length={masteries.length}
+                            setShow={() => setShow()}
+                        />
                     </div>
                     <div className="col-2">
                         <button className="btn btn-primary hide" onClick={() => setShow(masteries.length)}>Show all!</button>

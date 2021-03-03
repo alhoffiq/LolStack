@@ -1,7 +1,11 @@
 
-const SearchChamp = () => {
+const SearchChamp = ({length, setShow}) => {
 
-    async function search() { // Pulled straight from W3
+    async function search() {
+
+        setShow(length);
+
+        // Pulled straight from W3
         // Declare variables
         let searchName, i, txtValue;
         const input = document.getElementById('myInput');
