@@ -10,7 +10,7 @@ async function combineMasteries(summoner) { // Made this a function since the lo
     });
     const { data: championJson } = await axios({ // Gets a static data list of all champions, url needs to be updated every time a new champion is released
         method: 'get',
-        url: 'http://ddragon.leagueoflegends.com/cdn/11.4.1/data/en_US/champion.json'
+        url: 'http://ddragon.leagueoflegends.com/cdn/11.8.1/data/en_US/champion.json' // THIS needs to be updated everytime a new champion is released
     });
 
     const champions = championJson.data; // All this combines to 2 so 1 object has all the data it needs to be displayed in a card
