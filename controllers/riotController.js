@@ -4,13 +4,17 @@ const axios = require('axios');
 const riotApi = process.env.RIOTKEY;
 
 async function combineMasteries(summoner) { // Made this a function since the logic is the same between logged in summoner and searched one
+    const { data: versionData } = await axios({ // Gets Data Dragon's current version array
+        method: 'get',
+        url: 'https://ddragon.leagueoflegends.com/api/versions.json'
+    });
     const { data: masteryData } = await axios({ // Gets mastery data from given summoner
         method: 'get',
         url: `https://na1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/${summoner}?api_key=${riotApi}`
     });
     const { data: championJson } = await axios({ // Gets a static data list of all champions, url needs to be updated every time a new champion is released
         method: 'get',
-        url: 'http://ddragon.leagueoflegends.com/cdn/11.8.1/data/en_US/champion.json' // THIS needs to be updated everytime a new champion is released
+        url: `http://ddragon.leagueoflegends.com/cdn/${versionData[0]}/data/en_US/champion.json` // THIS needs to be updated everytime a new champion is released -- nevermind, they have a version number api
     });
 
     const champions = championJson.data; // All this combines to 2 so 1 object has all the data it needs to be displayed in a card
